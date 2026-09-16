@@ -82,6 +82,7 @@ input,select,button{font-family:inherit}
 .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .card .btn{width:100%;padding:18px;font-size:19px}
 .card .fine{font-size:13px;color:var(--faint);text-align:center}
+.hp{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none;margin:0;padding:0;border:0}
 .card .success{display:none;text-align:center;padding:16px 0}
 .card .success svg{width:60px;height:60px;margin:0 auto 12px;color:var(--wa)}
 .card.sent form{display:none}.card.sent .success{display:block}
@@ -256,7 +257,7 @@ footer .links{display:flex;gap:14px;flex-wrap:wrap}
               <select id="ctype" name="ctype"><option value="ועד בית">ועד בית</option><option value="חברת ניהול">חברת ניהול / אחזקה</option><option value="מוסד">מלון / מוסד / מפעל</option><option value="קבלן טופס 4">קבלן / יזם (טופס 4)</option><option value="בית פרטי">בית פרטי</option></select></div>
             <div class="field"><label for="city">עיר</label><input id="city" name="city" type="text" placeholder="הרצליה" autocomplete="address-level2"></div>
           </div>
-          <input type="text" name="website" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn btn-primary" type="submit">שלחו לי הצעת מחיר</button>
           <p class="fine">הפרטים משמשים רק לחזרה אליכם. בלי ספאם, בלי העברה לצד ג'.</p>
         </div>
@@ -451,7 +452,7 @@ footer .links{display:flex;gap:14px;flex-wrap:wrap}
           <div class="field"><label for="phone2">טלפון נייד</label><input id="phone2" name="phone" type="tel" inputmode="tel" placeholder="050-0000000" autocomplete="tel" required></div>
           <div class="field"><label for="city2">כתובת הבניין</label><input id="city2" name="city" type="text" placeholder="רחוב, מספר, עיר"></div>
           <input type="hidden" name="ctype" value="לא צוין">
-          <input type="text" name="website" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn btn-primary" type="submit">שלחו לי הצעת מחיר</button>
           <p class="fine">ללא התחייבות · מענה תוך שעה בשעות העבודה</p>
         </div>
