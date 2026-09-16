@@ -15,12 +15,8 @@
 | שעות פעילות (א׳–ה׳ 7–19, ו׳ 7–15) | הודעת הצלחה בטופס | לאמת |
 
 ## חיבור הטופס
-בראש ה-`<script>`: `const LEAD_ENDPOINT = "";`
-- ריק → הטופס פותח וואטסאפ עם הודעה מוכנה (לא מאבדים ליד).
-- למלא URL של שרת (POST JSON: name, phone, ctype, city, seg, utm_*, page, ts). אפשרויות:
-  1. השרת הקיים של גלגל (כבר שולח מיילים מ-office@katz-water.com) – להוסיף route `/api/lead` ששולח מייל + כותב ל-Monday.
-  2. Make/Zapier Webhook → Monday + מייל + וואטסאפ.
-  3. Formspree / Web3Forms (מהיר, ללא קוד).
+ההגדרות ב-`assets/config.js`: `whatsappNumber`, `leadEndpoint` (ריק = פתיחת וואטסאפ עם הודעה מוכנה), `showFromPrice`, `fromPriceILS`.
+שרת לידים חייב להחזיר JSON `{"accepted":true}` כדי שתוצג הודעת הצלחה. מפרט מלא: `../handoff-package/docs/INTEGRATION.md`.
 
 ## מעקב
 להוסיף לפני `</head>` את קוד GTM. הדף דוחף ל-`dataLayer`: `form_submit`, `click_call`, `click_whatsapp` (עם `seg`, `ctype`). ב-GTM: טריגרים על אירועים אלה → Google Ads Conversion + GA4 + Meta Pixel Lead.
