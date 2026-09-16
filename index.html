@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ניקוי וחיטוי מאגר מים לבניין | כץ איכויות מים</title>
+<meta name="description" content="ניקוי וחיטוי מאגרי מים בבניינים על ידי מוסמכי משרד הבריאות, כולל דיגום במעבדה מוסמכת ותעודה חתומה לוועד הבית. חברת איכות מים משנת 1986. הצעת מחיר תוך שעה.">
+<meta property="og:title" content="מתי בפעם האחרונה מישהו פתח את מאגר המים של הבניין שלכם?">
+<meta property="og:description" content="ניקוי, חיטוי, דיגום מעבדה ותעודה לוועד. כץ איכויות מים, מוסמכי משרד הבריאות משנת 1986.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logo-v.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1a4794; --blue-dark:#123472; --ink:#14213d; --body:#43536f; --muted:#5a6a85; --faint:#8a97ad;
+  --tint:#f3f7fc; --line:#e3eaf4; --field:#cfd9e8; --pale:#d6e2f7; --pale-2:#b9d0f5; --wa:#25D366;
+  --display:'Rubik','Arial Hebrew',Arial,sans-serif; --text:'Assistant','Segoe UI',Arial,sans-serif;
+  --max:1248px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--text);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-family:var(--display);text-wrap:balance;line-height:1.15}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+a{color:var(--blue);text-decoration:none}
+input,select,button{font-family:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.num{direction:ltr;unicode-bidi:isolate}
+.eyebrow{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.04em;color:var(--blue)}
+.eyebrow::before{content:"";width:28px;height:3px;background:currentColor;flex:none}
+.h2{font-weight:800;font-size:clamp(28px,3.4vw,42px)}
+.lead{font-size:clamp(17px,1.4vw,19px);color:var(--body);max-width:600px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:8px;font-weight:700;font-size:18px;border:0;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s;white-space:nowrap}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-dark);color:#fff}
+.btn-outline{background:#fff;color:var(--blue);border:2px solid var(--blue);padding:14px 26px}
+.btn-outline:hover{background:var(--tint)}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-white:hover{background:var(--tint);color:var(--blue-dark)}
+.btn svg{width:22px;height:22px;flex:none}
+.section{padding:96px 0}
+.section-tint{background:var(--tint)}
+.section-blue{background:var(--blue);color:#fff}
+.section-blue .eyebrow{color:var(--pale-2)}
+.section-blue .h2{color:#fff}
+.section-blue .lead{color:var(--pale)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:72px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:22px}
+
+/* nav */
+.nav{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:40}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:88px;gap:16px}
+.nav img{height:52px;width:auto}
+.nav .actions{display:flex;align-items:center;gap:28px}
+.nav .phone{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink)}
+.nav .phone svg{width:22px;height:22px;color:var(--blue)}
+.nav .btn{padding:13px 24px;font-size:17px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--tint);padding:88px 0 96px}
+.hero .mark{position:absolute;left:-120px;bottom:-160px;width:620px;height:auto;opacity:.06;pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-weight:800;font-size:clamp(34px,4.3vw,58px);line-height:1.12;letter-spacing:-.01em}
+.hero .sub{font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--body);max-width:560px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .note{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;color:var(--muted);font-weight:600}
+
+/* lead card */
+.card{background:#fff;border-radius:14px;padding:34px;box-shadow:0 24px 60px -30px rgba(20,33,61,.35);border:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.card h3{font-weight:700;font-size:26px}
+.card .hint{font-size:16px;color:var(--muted)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-weight:700;font-size:15px}
+.field input,.field select{font-size:17px;padding:14px 16px;border:1.5px solid var(--field);border-radius:8px;background:#fbfcfe;color:var(--ink);outline:none;width:100%}
+.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(26,71,148,.14)}
+.field input.err{border-color:#c8452c}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card .btn{width:100%;padding:18px;font-size:19px}
+.card .fine{font-size:13px;color:var(--faint);text-align:center}
+.card .success{display:none;text-align:center;padding:16px 0}
+.card .success svg{width:60px;height:60px;margin:0 auto 12px;color:var(--wa)}
+.card.sent form{display:none}.card.sent .success{display:block}
+
+/* trust */
+.trust{border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.trust .item{display:flex;align-items:center;gap:14px;padding:26px 20px;border-inline-start:1px solid var(--line)}
+.trust .item:first-child{border:0;padding-inline-start:0}
+.trust .item svg{width:36px;height:36px;color:var(--blue);flex:none}
+.trust b{display:block;font-family:var(--display);font-weight:700;font-size:19px}
+.trust span{font-size:14px;color:var(--muted)}
+
+/* problem */
+.icon-list{display:flex;flex-direction:column;gap:18px}
+.icon-list li{display:flex;gap:16px;align-items:flex-start}
+.icon-list .ic{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:var(--tint);flex:none}
+.icon-list .ic svg{width:24px;height:24px}
+.icon-list b{display:block;font-size:18px}
+.icon-list span{font-size:16px;color:var(--muted)}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.photo{aspect-ratio:3/4;border-radius:12px;background:#e9eef6;border:2px dashed #b9c7dc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);text-align:center;padding:20px;font-size:15px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo b{font-size:16px}
+
+/* regulation */
+.reg-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:start}
+.reg-points{display:flex;flex-direction:column;gap:14px}
+.reg-points li{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;background:rgba(255,255,255,.08);border-radius:10px}
+.reg-points svg{width:26px;height:26px;flex:none;margin-top:2px}
+.reg-points b{display:block;font-size:18px}
+.reg-points span{font-size:16px;color:var(--pale)}
+.reg-points a{color:#fff;text-decoration:underline}
+.reg-side{background:#fff;color:var(--ink);border-radius:14px;padding:34px;display:flex;flex-direction:column;gap:14px}
+.reg-side h3{font-weight:700;font-size:24px}
+.checklist{display:flex;flex-direction:column;gap:12px}
+.checklist li{display:flex;gap:12px;align-items:center;font-size:16px}
+.checklist svg{width:22px;height:22px;flex:none;color:var(--blue)}
+.reg-side .lab{background:var(--tint);border-radius:10px;padding:16px 18px;font-size:15px;color:var(--body)}
+.reg-side .btn{width:100%}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.step{border:1px solid var(--line);border-radius:12px;padding:28px 26px;display:flex;flex-direction:column;gap:10px;background:#fff}
+.step .n{font-family:var(--display);font-weight:700;font-size:15px;color:var(--blue)}
+.step h3{font-weight:700;font-size:21px}
+.step p{font-size:16px;color:var(--muted)}
+
+/* deliverables */
+.cert{background:#fff;border-radius:8px;padding:40px;box-shadow:0 30px 60px -30px rgba(20,33,61,.35);border:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
+.cert .head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cert .head img{height:44px;width:auto}
+.cert .head small{font-size:12px;color:var(--faint)}
+.cert h3{font-weight:800;font-size:24px;text-align:center;color:var(--blue)}
+.cert .sub{text-align:center;font-size:13px;color:var(--faint)}
+.cert .rows{display:grid;grid-template-columns:38% 62%;row-gap:10px;font-size:15px;border-top:1px dashed var(--field);padding-top:14px}
+.cert .rows span:nth-child(odd){color:var(--faint)}
+.cert .sig{display:flex;justify-content:space-between;align-items:flex-end;font-size:12px;color:var(--faint);margin-top:10px}
+.cert .sig i{display:block;width:130px;height:1px;background:var(--ink);margin-bottom:4px}
+.deliver-list{display:flex;flex-direction:column;gap:12px}
+.deliver-list li{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:17px}
+.deliver-list svg{width:26px;height:26px;flex:none;color:var(--blue)}
+.deliver-list b{font-weight:700}
+.deliver-list span{color:var(--muted)}
+
+/* pricing */
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.tier{border:1px solid var(--line);border-radius:12px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;position:relative;background:#fff}
+.tier.hot{border:2px solid var(--blue);box-shadow:0 24px 50px -30px rgba(26,71,148,.5)}
+.tier .badge{position:absolute;top:-14px;inset-inline-start:24px;background:var(--blue);color:#fff;font-weight:700;font-size:13px;padding:5px 12px;border-radius:999px}
+.tier h3{font-weight:700;font-size:23px}
+.tier .for{font-size:15px;color:var(--muted)}
+.tier .price{font-family:var(--display);font-weight:800;font-size:40px;line-height:1}
+.tier .price small{font-family:var(--text);font-weight:600;font-size:15px;color:var(--muted)}
+.tier .per{font-size:14px;color:var(--faint)}
+.tier ul{display:flex;flex-direction:column;gap:9px;font-size:16px;flex:1}
+.tier .btn{width:100%}
+.anchor{text-align:center;font-size:16px;color:var(--muted)}
+.anchor b{color:var(--ink)}
+
+/* proof */
+.proof{text-align:center;display:flex;flex-direction:column;align-items:center;gap:28px}
+.proof h2{font-size:clamp(26px,3vw,34px)}
+.chips{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.chips span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-weight:600;font-size:15px;color:var(--body)}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:22px 0;font-weight:700;font-size:19px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--display);font-size:26px;color:var(--blue);flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 0 22px;font-size:16px;color:var(--muted)}
+
+/* final */
+.final .contact{display:flex;flex-direction:column;gap:12px;font-weight:700;font-size:21px}
+.final .contact a{color:#fff;display:flex;align-items:center;gap:12px}
+.final .contact svg{width:24px;height:24px}
+.final .card{color:var(--ink)}
+.final .card h3{font-size:24px}
+
+/* footer */
+footer{padding:28px 0;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer .brand{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+footer img{height:36px;width:auto}
+footer .links{display:flex;gap:14px;flex-wrap:wrap}
+
+/* sticky mobile bar */
+.mbar{position:fixed;bottom:0;left:0;right:0;z-index:50;display:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -10px 30px -20px rgba(20,33,61,.35)}
+.mbar .btn{padding:14px;font-size:16px}
+
+/* responsive */
+@media(max-width:1000px){
+  .grid2,.reg-grid,.faq-grid{grid-template-columns:1fr;gap:40px}
+  .steps,.tiers{grid-template-columns:1fr 1fr}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .trust .item{border:0;border-top:1px solid var(--line);padding-inline-start:0}
+  .hero{padding:56px 0 64px}
+  .hero .mark{width:360px;left:-130px;top:-60px;bottom:auto}
+  .nav .wrap{height:72px}
+  .nav .btn,.nav .phone span{display:none}
+  .nav img{height:40px}
+}
+@media(max-width:640px){
+  .section{padding:64px 0}
+  .steps,.tiers,.row2,.trust .wrap{grid-template-columns:1fr}
+  .hero .ctas .btn{width:100%}
+  .card,.reg-side,.cert{padding:24px 20px}
+  .mbar{display:grid}
+  body{padding-bottom:78px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" aria-label="כץ איכויות מים"><img src="assets/logo-h.svg" alt="כץ איכויות מים"></a>
+    <div class="actions">
+      <a class="phone" href="tel:+972505219429" data-track="click_call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.9 2z"/></svg><span class="num">050-521-9429</span></a>
+      <a class="btn btn-primary" href="#lead">הצעת מחיר תוך שעה</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img class="mark" src="assets/logo-v.svg" alt="" aria-hidden="true">
+  <div class="wrap grid2">
+    <div class="stack" style="gap:26px">
+      <div class="eyebrow" id="heroEyebrow">מוסמכי משרד הבריאות · חברת איכות מים משנת 1986</div>
+      <h1 id="heroTitle">מתי בפעם האחרונה מישהו פתח את מאגר המים של הבניין שלכם?</h1>
+      <p class="sub" id="heroSub">המאגר על הגג הוא התחנה האחרונה שהמים עוברים לפני הברז של הדיירים. משרד הבריאות דורש לרוקן, לנקות ולחטא אותו אחת לשנה. אנחנו עושים את זה, דוגמים במעבדה מוסמכת, ומשאירים לוועד תעודה חתומה.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="https://wa.me/972505219429?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%91%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%99%D7%A7%D7%95%D7%99%20%D7%95%D7%97%D7%99%D7%98%D7%95%D7%99%20%D7%9E%D7%90%D7%92%D7%A8%20%D7%9E%D7%99%D7%9D%20%D7%91%D7%91%D7%A0%D7%99%D7%99%D7%9F" target="_blank" rel="noopener" data-track="click_whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>שלחו הודעת וואטסאפ</a>
+        <a class="btn btn-outline" href="tel:+972505219429" data-track="click_call">התקשרו: <span class="num">050-521-9429</span></a>
+      </div>
+      <div class="note"><span>ללא התחייבות</span><span>·</span><span>מענה תוך שעה בשעות העבודה</span><span>·</span><span>שירות בכל הארץ</span></div>
+    </div>
+
+    <div class="card" id="lead">
+      <form id="leadForm" novalidate>
+        <div class="stack" style="gap:16px">
+          <h3>קבלו הצעת מחיר לניקוי המאגר</h3>
+          <p class="hint">4 שדות, פחות מדקה. נחזור אליכם עם מחיר סגור ותאריך.</p>
+          <div class="field"><label for="name">שם מלא</label><input id="name" name="name" type="text" placeholder="לדוגמה: רונית לוי" autocomplete="name" required></div>
+          <div class="field"><label for="phone">טלפון נייד</label><input id="phone" name="phone" type="tel" inputmode="tel" placeholder="050-0000000" autocomplete="tel" required></div>
+          <div class="row2">
+            <div class="field"><label for="ctype">אני פונה בשם</label>
+              <select id="ctype" name="ctype"><option value="ועד בית">ועד בית</option><option value="חברת ניהול">חברת ניהול / אחזקה</option><option value="מוסד">מלון / מוסד / מפעל</option><option value="קבלן טופס 4">קבלן / יזם (טופס 4)</option><option value="בית פרטי">בית פרטי</option></select></div>
+            <div class="field"><label for="city">עיר</label><input id="city" name="city" type="text" placeholder="הרצליה" autocomplete="address-level2"></div>
+          </div>
+          <input type="text" name="website" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
+          <button class="btn btn-primary" type="submit">שלחו לי הצעת מחיר</button>
+          <p class="fine">הפרטים משמשים רק לחזרה אליכם. בלי ספאם, בלי העברה לצד ג'.</p>
+        </div>
+      </form>
+      <div class="success">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+        <h3>קיבלנו, תודה!</h3>
+        <p class="hint">נחזור אליכם תוך שעה בשעות העבודה (א׳–ה׳ 7:00–19:00, ו׳ 7:00–15:00).<br>רוצים לזרז? <a href="https://wa.me/972505219429" target="_blank" rel="noopener">כתבו לנו בוואטסאפ</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg><div><b>מוסמכי משרד הבריאות</b><span>לניקוי וחיטוי מערכות מי שתייה</span></div></div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l4 9a2 2 0 0 1-2 3H7a2 2 0 0 1-2-3l4-9z"/><path d="M8 15h8"/></svg><div><b>מעבדה מוסמכת</b><span>דיגום בקטריאלי אחרי כל חיטוי</span></div></div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>משנת 1986</b><span>40 שנה של דיגום וחיטוי מים</span></div></div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><div><b>תעודה חתומה</b><span>לוועד, לביטוח ולביקורת</span></div></div>
+  </div>
+</div>
+
+<section class="section" id="problem">
+  <div class="wrap grid2">
+    <div class="stack">
+      <div class="eyebrow">מה מצטבר בשנה אחת</div>
+      <h2 class="h2">חמש קומות מעל הראש שלכם יש מיכל שאף אחד לא פתח.</h2>
+      <p class="lead">מים שעומדים חודשים במאגר לא נשארים כמו שהגיעו מהרשת. זה מה שאנחנו מוצאים כמעט בכל מאגר שלא טופל שנה:</p>
+      <ul class="icon-list">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4794" stroke-width="2" stroke-linecap="round"><path d="M3 18c3-1 5 1 8 0s5 1 8 0"/><path d="M3 14c3-1 5 1 8 0s5 1 8 0"/></svg></span><div><b>שכבת משקע וסחף בתחתית</b><span>חול, אבנית וחלודה מהצנרת שוקעים ומצטברים. משם המים נשאבים לדירות.</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4794" stroke-width="2" stroke-linecap="round"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z"/></svg></span><div><b>ביופילם ואצות על הדפנות</b><span>שכבה חלקלקה שבה חיידקים מתרבים בקיץ, במים של 25 עד 45 מעלות.</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4794" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-9 4 4 4-8 4 13z"/></svg></span><div><b>מכסה לא אטום: יונים, חרקים ומכרסמים</b><span>ב-2018 נסגר מאגר בבניין בתל אביב אחרי שנמצאו בו פגרי עכברים. הדיירים סבלו מכאבי בטן במשך שבועות.</span></div></li>
+      </ul>
+    </div>
+    <div class="photos">
+      <div class="photo" id="photoBefore"><b>המאגר לפני הניקוי</b><span>כאן תופיע תמונה אמיתית מתוך מאגר</span></div>
+      <div class="photo" id="photoAfter"><b>אחרי ניקוי וחיטוי</b><span>כאן תופיע תמונה אמיתית מתוך מאגר</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-blue" id="reg">
+  <div class="wrap reg-grid">
+    <div class="stack">
+      <div class="eyebrow">זו לא המלצה, זו דרישה</div>
+      <h2 class="h2">האחריות על המים במאגר היא של הבניין. כלומר, של הוועד.</h2>
+      <p class="lead">תאגיד המים אחראי עד מד המים הראשי. מהרגע שהמים נכנסים למאגר, האחריות לאיכותם עוברת לבעלי הנכס.</p>
+      <ul class="reg-points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div><b>ניקוי וחיטוי אחת לשנה, בידי גורם מוסמך</b><span>חוזר משרד הבריאות 22/2013, סעיף 2.1.1.3: "בבנייני מגורים, אחת לשנה (על פי ת"י 1525)". <a href="https://www.gov.il/he/pages/bz22-2013" target="_blank" rel="noopener">לחוזר באתר משרד הבריאות</a></span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><div><b>תיעוד: תווית על המאגר, תאריך, שיטה, תוצאות מעבדה</b><span>זה מה שמבקש מפקח, מבטח או עורך דין אם חלילה קורה משהו. "עשינו לפני שנתיים" לא נחשב.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg><div><b>חברי ועד חשופים אישית</b><span>תעודת חיטוי בתיק הבניין היא ההוכחה שפעלתם כנדרש.</span></div></li>
+      </ul>
+    </div>
+    <aside class="reg-side">
+      <h3>מה מפקח מצפה למצוא בתיק הבניין</h3>
+      <ul class="checklist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>תעודת ניקוי וחיטוי מהשנה האחרונה, חתומה</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>דוח מעבדה מוסמכת לדיגום בקטריאלי</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>תווית על המאגר עם שם המבצע ותאריך</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>תמונות מצב המאגר לפני ואחרי</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>בדיקת מז"ח בתוקף</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>תאריך הניקוי הבא ביומן</li>
+      </ul>
+      <div class="lab">אנחנו ספקי דיגום מים של משרד הבריאות משנת 2010. הדיגום נעשה על ידי דוגם מוסמך ונשלח למעבדה מוסמכת, לא "נבדק במקום".</div>
+      <a class="btn btn-primary" href="#lead">בדקו מה חסר בתיק שלכם</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap stack" style="gap:40px">
+    <div class="stack" style="gap:18px;max-width:760px">
+      <div class="eyebrow">איך זה עובד</div>
+      <h2 class="h2">6 שלבים, חצי יום עבודה, והבניין חוזר למים נקיים.</h2>
+      <p class="lead">לא ריסוס ולא "שטיפה". ריקון מלא, ניקוי מכני, חיטוי בריכוז ובזמן מגע שקובע חוזר משרד הבריאות, ואימות במעבדה.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">שלב 1</span><h3>תיאום בשעה שקטה</h3><p>קובעים מועד נוח, שולחים לכם הודעה מוכנה לקבוצת הבניין, ומשאירים מים בקומות הנמוכות ככל שאפשר.</p></div>
+      <div class="step"><span class="n">שלב 2</span><h3>ריקון וניקוי מכני</h3><p>סגירת הזנה, ריקון מלא, שאיבת המשקע, הברשה ושטיפה בלחץ של הדפנות, התחתית והמכסה. צילום "לפני".</p></div>
+      <div class="step"><span class="n">שלב 3</span><h3>חיטוי בריכוז מבוקר</h3><p>היפוכלוריט מאושר למי שתייה בריכוז ובזמן המגע שקובע החוזר: 200 מג"ל לפחות חצי שעה. מודדים, לא מנחשים.</p></div>
+      <div class="step"><span class="n">שלב 4</span><h3>שטיפה ומילוי מחדש</h3><p>שוטפים עד שהכלור חוזר לרמת מי שתייה, ממלאים ופותחים את ההזנה לבניין. בטוח לשתייה מיד.</p></div>
+      <div class="step"><span class="n">שלב 5</span><h3>דיגום ומעבדה מוסמכת</h3><p>בדיקות שדה לכלור ועכירות, ואז דוגם מוסמך לוקח דגימה סטרילית תוך 24 שעות ושולח למעבדה מוסמכת.</p></div>
+      <div class="step"><span class="n">שלב 6</span><h3>תווית, תעודה ודוח</h3><p>תווית על המאגר, תעודת ביצוע חתומה, דוח המעבדה, תמונות לפני ואחרי והערות ליקויים. PDF במייל לוועד.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="deliver">
+  <div class="wrap grid2">
+    <div class="cert" aria-label="דוגמת תעודת ניקוי וחיטוי">
+      <div class="head"><img src="assets/logo-h.svg" alt="כץ איכויות מים"><small>מוסמכי משרד הבריאות</small></div>
+      <h3>תעודת ניקוי וחיטוי מאגר מי שתייה</h3>
+      <p class="sub">בהתאם לחוזר משרד הבריאות 22/2013, הנחיות לניקוי מערכות אספקת מי שתייה</p>
+      <div class="rows">
+        <span>כתובת הנכס</span><span>רח׳ הדוגמה 12, הרצליה</span>
+        <span>מזמין העבודה</span><span>ועד הבית</span>
+        <span>סוג ונפח מאגר</span><span>בטון, גג, 12 מ"ק</span>
+        <span>תאריך ביצוע</span><span class="num">14.09.2026</span>
+        <span>שיטת חיטוי</span><span>היפוכלוריט, 200 מג"ל, 30 דקות</span>
+        <span>דיגום בקטריאלי</span><span>מעבדה מוסמכת · תקין</span>
+        <span>ניקוי הבא</span><span class="num">09/2027</span>
+      </div>
+      <div class="sig"><div><i></i>חתימת המבצע המוסמך</div><div><i></i>חותמת החברה</div></div>
+    </div>
+    <div class="stack">
+      <div class="eyebrow">מה נשאר לכם ביד</div>
+      <h2 class="h2">לא רק מאגר נקי. תיק מסודר שמגן על הוועד.</h2>
+      <p class="lead">רוב החברות מנקות והולכות. אנחנו משאירים אחרינו את המסמכים שמישהו יבקש מכם יום אחד.</p>
+      <ul class="deliver-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg><div><b>תעודת ניקוי וחיטוי חתומה</b> <span>מתקבלת אצל מבטחים ומפקחים.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l4 9a2 2 0 0 1-2 3H7a2 2 0 0 1-2-3l4-9z"/></svg><div><b>דוח מעבדה מוסמכת</b> <span>תוצאת דיגום ממעבדה חיצונית.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-8-8V4h16z"/><path d="M8 8h8M8 12h5"/></svg><div><b>תווית על המאגר</b> <span>שם המבצע, כתובת ותאריך, כפי שמחייב החוזר.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/></svg><div><b>תמונות לפני ואחרי</b> <span>כדי שתראו לדיירים על מה שילמתם.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><div><b>תזכורת אוטומטית לשנה הבאה</b> <span>אתם לא צריכים לזכור.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap stack" style="gap:40px">
+    <div class="stack" style="gap:18px;max-width:760px">
+      <div class="eyebrow">שקיפות במחיר</div>
+      <h2 class="h2">מחיר קבוע לפי גודל המאגר. בלי הפתעות בסוף.</h2>
+      <p class="lead">המחיר נסגר לפני שמגיעים, אחרי שתי שאלות בטלפון: כמה מ"ק המאגר ואיפה הוא.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <h3>ניקוי וחיטוי</h3><p class="for">לבניינים שרק צריכים לעמוד בדרישה</p>
+        <div class="price"><small>החל מ־ </small><span class="num" data-price="basic">₪ 1,190</span></div><p class="per">למאגר עד 10 מ"ק, כולל מע"מ</p>
+        <ul><li>ריקון מלא ושאיבת משקע</li><li>ניקוי מכני ושטיפה בלחץ</li><li>חיטוי בכלור בריכוז מבוקר</li><li>תעודה חתומה + תווית על המאגר</li><li>תמונות לפני ואחרי</li></ul>
+        <a class="btn btn-outline" href="#lead">לקבלת הצעה</a>
+      </div>
+      <div class="tier hot">
+        <span class="badge">הכי מבוקש בוועדי בתים</span>
+        <h3>ניקוי + חיטוי + מעבדה</h3><p class="for">תיק מלא לוועד, לביטוח ולביקורת</p>
+        <div class="price"><small>החל מ־ </small><span class="num" data-price="full">₪ 1,590</span></div><p class="per">למאגר עד 10 מ"ק, כולל מע"מ</p>
+        <ul><li>כל מה שבחבילת הבסיס</li><li>דיגום על ידי דוגם מוסמך תוך 24 שעות</li><li>דוח מעבדה מוסמכת</li><li>דוח ליקויים: מכסה, אטימה, מצוף, רשת</li><li>בדיקת מז"ח בתיאום</li><li>תזכורת אוטומטית לשנה הבאה</li></ul>
+        <a class="btn btn-primary" href="#lead">לקבלת הצעה</a>
+      </div>
+      <div class="tier">
+        <h3>חוזה שנתי</h3><p class="for">לחברות ניהול ולוועדים שרוצים שקט</p>
+        <div class="price" style="font-size:30px;line-height:1.3">מחיר לפי כמות</div><p class="per">הנחה מדורגת מ-5 בניינים ומעלה</p>
+        <ul><li>ניקוי וחיטוי שנתי לכל הבניינים</li><li>לוח עבודה שנתי ותיאום מולנו</li><li>דיגום תקופתי לפי ההנחיות</li><li>מחיר קבוע לשנה, עדיפות בקריאות</li><li>כל התעודות בתיקייה אחת במייל</li></ul>
+        <a class="btn btn-outline" href="#lead">לשיחה על הפורטפוליו</a>
+      </div>
+    </div>
+    <p class="anchor">בבניין של 24 דירות, החבילה המלאה יוצאת <b>כ-65 ₪ לדירה לשנה</b>. ללא תשלום מראש. לא מרוצים? חוזרים ומנקים שוב, בלי עלות.</p>
+  </div>
+</section>
+
+<section class="section section-tint" id="proof">
+  <div class="wrap proof">
+    <h2 class="h2">40 שנה שאנחנו מטפלים במים שאנשים שותים.</h2>
+    <p class="lead" style="max-width:720px">כץ איכויות מים עובדת עם תאגידי מים, עיריות, בתי חולים, מלונות ובתי אבות. אותו צוות, אותו סטנדרט, גם למאגר של הבניין שלכם.</p>
+    <div class="chips"><span>תאגידי מים</span><span>עיריות ורשויות</span><span>בתי חולים</span><span>מלונות</span><span>בתי אבות</span><span>ועדי בתים וחברות ניהול</span></div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap faq-grid">
+    <div class="stack" style="gap:18px">
+      <div class="eyebrow">שאלות שוועדים שואלים</div>
+      <h2 class="h2">לפני שאתם מרימים טלפון</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>כמה זמן הבניין נשאר בלי מים?</summary><div class="a">העבודה כולה לוקחת בדרך כלל חצי יום. אספקת המים נסגרת רק לחלק מהזמן, לרוב כמה שעות, בשעות שקטות ובתיאום מראש.</div></details>
+      <details><summary>המאגר נראה נקי מבחוץ. באמת צריך?</summary><div class="a">המשקע בתחתית והביופילם על הדפנות לא נראים מבחוץ. הדרישה היא אחת לשנה, לא "כשנראה מלוכלך". ובכל מקרה, אנחנו מצלמים לפני ואתם רואים בעצמכם.</div></details>
+      <details><summary>מי משלם: הוועד או הדיירים?</summary><div class="a">המאגר הוא רכוש משותף, ולכן הניקוי הוא הוצאת תחזוקה רגילה מקופת הוועד. בחישוב לדירה מדובר בעשרות שקלים לשנה.</div></details>
+      <details><summary>הכימיקלים בטוחים לילדים ולקשישים?</summary><div class="a">כן. כלור הוא אותו חומר שמחטא את מי הרשת העירונית. אחרי החיטוי שוטפים ומודדים עד שהריכוז חוזר לרמת מי שתייה, ורק אז מחזירים את המים לבניין.</div></details>
+      <details><summary>אתם מטפלים גם במאגר תת-קרקעי ובצנרת?</summary><div class="a">כן. מאגרי גג ותת-קרקעיים, בטון, פלסטיק ופלדה, חיטוי קווי מים לבניינים חדשים (טופס 4) וחיטוי מערכות מים במוסדות.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section section-blue final" id="contact">
+  <div class="wrap grid2">
+    <div class="stack" style="gap:20px">
+      <h2 class="h2">שלחו כתובת. תקבלו מחיר סגור ותאריך.</h2>
+      <p class="lead">אין צורך בביקור מקדים ואין התחייבות. אנחנו שואלים כמה מ"ק המאגר ואיפה הוא, וחוזרים עם הצעה תוך שעה בשעות העבודה.</p>
+      <div class="contact">
+        <a href="tel:+972505219429" data-track="click_call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.9 2z"/></svg><span class="num">050-521-9429</span></a>
+        <a href="https://wa.me/972505219429" target="_blank" rel="noopener" data-track="click_whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>וואטסאפ</a>
+        <a href="mailto:office@katz-water.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>office@katz-water.com</a>
+      </div>
+    </div>
+    <div class="card" id="lead2">
+      <form id="leadForm2" novalidate>
+        <div class="stack" style="gap:14px">
+          <h3>הצעת מחיר תוך שעה</h3>
+          <div class="field"><label for="name2">שם מלא</label><input id="name2" name="name" type="text" placeholder="שם" autocomplete="name" required></div>
+          <div class="field"><label for="phone2">טלפון נייד</label><input id="phone2" name="phone" type="tel" inputmode="tel" placeholder="050-0000000" autocomplete="tel" required></div>
+          <div class="field"><label for="city2">כתובת הבניין</label><input id="city2" name="city" type="text" placeholder="רחוב, מספר, עיר"></div>
+          <input type="hidden" name="ctype" value="לא צוין">
+          <input type="text" name="website" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
+          <button class="btn btn-primary" type="submit">שלחו לי הצעת מחיר</button>
+          <p class="fine">ללא התחייבות · מענה תוך שעה בשעות העבודה</p>
+        </div>
+      </form>
+      <div class="success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><h3>קיבלנו, תודה!</h3><p class="hint">נחזור אליכם תוך שעה בשעות העבודה.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="assets/logo-h.svg" alt="כץ איכויות מים"><span>סוקולוב 10, הרצליה · מוסמכי משרד הבריאות לניקוי וחיטוי מערכות מי שתייה · פעילים משנת 1986</span></div>
+    <div class="links"><a class="num" href="tel:+972505219429">050-521-9429</a><span>·</span><a href="mailto:office@katz-water.com">office@katz-water.com</a><span>·</span><a href="https://katz-water.co.il" target="_blank" rel="noopener">katz-water.co.il</a></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-primary" href="https://wa.me/972505219429?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%91%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A0%D7%99%D7%A7%D7%95%D7%99%20%D7%95%D7%97%D7%99%D7%98%D7%95%D7%99%20%D7%9E%D7%90%D7%92%D7%A8%20%D7%9E%D7%99%D7%9D%20%D7%91%D7%91%D7%A0%D7%99%D7%99%D7%9F" target="_blank" rel="noopener" data-track="click_whatsapp">וואטסאפ</a>
+  <a class="btn btn-outline" href="tel:+972505219429" data-track="click_call">התקשרו</a>
+</div>
+
+<script>
+/* ===== CONFIG (edit before launch) ===== */
+const LEAD_ENDPOINT = "";              // e.g. "https://your-server/api/lead" or a Make/Zapier webhook. Empty = WhatsApp fallback.
+const WA_NUMBER = "972505219429";
+window.dataLayer = window.dataLayer || [];
+function track(ev, data){ try{ window.dataLayer.push(Object.assign({event:ev}, data||{})); if(window.gtag) gtag('event', ev, data||{}); if(window.fbq){ if(ev==='form_submit') fbq('track','Lead'); else fbq('trackCustom', ev); } }catch(e){} }
+
+/* ===== Segment-aware headline (?seg=vaad|nihul|mosad|hotel|tofes4) ===== */
+const SEGS = {
+  vaad:  {eye:"לוועדי בתים · מוסמכי משרד הבריאות", h:"מתי בפעם האחרונה מישהו פתח את מאגר המים של הבניין שלכם?", s:"ניקוי, חיטוי, דיגום במעבדה מוסמכת ותעודה חתומה לתיק הוועד. חצי יום עבודה, מחיר סגור מראש, עשרות שקלים לדירה לשנה.", ctype:"ועד בית"},
+  nihul: {eye:"לחברות ניהול ואחזקה · ספק אחד לכל הבניינים", h:"כל מאגרי הבניינים שלכם, לוח שנתי אחד, תיקייה אחת של תעודות.", s:"ניקוי וחיטוי שנתי לכל הפורטפוליו, דיגום מעבדה, דוחות במייל ומחיר מדורג לפי כמות. אתם מנהלים, אנחנו מזכירים ומבצעים.", ctype:"חברת ניהול"},
+  mosad: {eye:"למלונות, בתי אבות ומוסדות · ביקורת משרד הבריאות", h:"תיק מים שעובר ביקורת בלי הערות.", s:"ניקוי וחיטוי מאגרים, סקר סיכוני לגיונלה, דיגום במעבדה מוסמכת ועבודה בלילה ללא השבתה. אותו צוות שעובד עם בתי חולים ותאגידי מים.", ctype:"מוסד"},
+  hotel: {eye:"למלונות · לגיונלה ופסאודומונס", h:"אורח אחד חולה עולה יותר מכל תוכנית תחזוקה.", s:"חיטוי מאגרים ומערכות מים חמים, סקר לגיונלה ודיגום מעבדה, בלילה, בלי להפריע לאורחים. תיעוד מלא לביקורת משרד הבריאות.", ctype:"מוסד"},
+  tofes4:{eye:"לקבלנים ויזמים · טופס 4", h:"חיטוי מאגר וצנרת לאכלוס, בלי לעכב את המסירה.", s:"חיטוי קווי מים ומאגר, דיגום מהיר במעבדה מוסמכת ותיאום ישיר מול תאגיד המים. תעודה ודוח מעבדה תוך ימים ספורים.", ctype:"קבלן טופס 4"}
+};
+const qs = new URLSearchParams(location.search);
+let seg = qs.get('seg');
+function applySeg(k){ const s=SEGS[k]; if(!s) return; seg=k;
+  document.getElementById('heroEyebrow').textContent=s.eye; document.getElementById('heroTitle').textContent=s.h; document.getElementById('heroSub').textContent=s.s;
+  const sel=document.getElementById('ctype'); if(sel) sel.value=s.ctype; }
+if(seg) applySeg(seg);
+document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',()=>track(a.dataset.track,{seg:seg||'none'})));
+
+/* ===== Lead forms ===== */
+function validIL(p){ p=(p||'').replace(/[^\d+]/g,''); return /^(\+972|0)(5\d|[2-4]|[89]|7\d)\d{7}$/.test(p) || /^0\d{8,9}$/.test(p); }
+async function handleForm(form){
+  const card=form.closest('.card'); const data=Object.fromEntries(new FormData(form).entries());
+  if(data.website) return;
+  const nameEl=form.querySelector('[name=name]'), phoneEl=form.querySelector('[name=phone]');
+  nameEl.classList.remove('err'); phoneEl.classList.remove('err');
+  if(!data.name||data.name.trim().length<2){ nameEl.classList.add('err'); nameEl.focus(); return; }
+  if(!validIL(data.phone)){ phoneEl.classList.add('err'); phoneEl.focus(); return; }
+  data.seg=seg||''; data.page=location.href; data.ts=new Date().toISOString();
+  ['utm_source','utm_medium','utm_campaign','utm_term'].forEach(k=>data[k]=qs.get(k)||'');
+  const btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='שולח...';
+  let ok=false;
+  if(LEAD_ENDPOINT){ try{ const r=await fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); ok=r.ok; }catch(e){ ok=false; } }
+  if(!ok){ const msg=`שלום, אני ${data.name} (${data.ctype||''}${data.city?', '+data.city:''}). מעוניין/ת בהצעת מחיר לניקוי וחיטוי מאגר מים. טלפון: ${data.phone}`; window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank'); }
+  track('form_submit',{seg:seg||'none',ctype:data.ctype,via:ok?'endpoint':'whatsapp_fallback'});
+  card.classList.add('sent');
+}
+document.querySelectorAll('#leadForm,#leadForm2').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();handleForm(f);}));
+document.querySelectorAll('a[href="#lead"]').forEach(a=>a.addEventListener('click',e=>{ e.preventDefault(); document.getElementById('lead').scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(()=>document.getElementById('name').focus({preventScroll:true}),600); }));
+</script>
+</body>
+</html>
