@@ -35,23 +35,15 @@ document.querySelectorAll('a[href^="tel:"]').forEach(a => { a.href = 'tel:+' + P
 document.querySelectorAll('[data-phone]').forEach(el => { el.textContent = PHONE_DISPLAY; });
 document.querySelectorAll('[data-email]').forEach(el => { if (config.email) { el.textContent = config.email; if (el.tagName === 'A') el.href = 'mailto:' + config.email; } });
 
-/* ===== Prices ===== */
-const prices = config.prices || {};
-document.querySelectorAll('[data-price-service]').forEach(block => {
-  const key = block.dataset.priceService;
-  const val = prices[key];
-  const num = block.querySelector('[data-price-value]');
-  const withPrice = block.querySelector('[data-price-with]');
-  const noPrice = block.querySelector('[data-price-without]');
-  if (Number.isFinite(val) && val > 0) {
-    if (num) num.textContent = new Intl.NumberFormat('he-IL').format(val);
-    if (withPrice) withPrice.hidden = false;
-    if (noPrice) noPrice.hidden = true;
-  } else {
-    if (withPrice) withPrice.hidden = true;
-    if (noPrice) noPrice.hidden = false;
-  }
-});
+/* ===== Prices: policy Oct 2026 = no prices on the site; blocks show the "on request" text ===== */
+document.querySelectorAll("[data-price-without]").forEach(el => { el.hidden = false; });
+
+/* ===== Scroll reveal ===== */
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const targets = document.querySelectorAll(".svc,.segment,.trigger,.step-big,.step,.test,.why,.related a,.deliver-list li,.sec-head,.quote-card,.facts,.chooser,.reg-table,.case-card,.cert,.about-card,.trust .item,.faq details");
+  const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }); }, {rootMargin: "0px 0px -8% 0px", threshold: 0.08});
+  targets.forEach(el => { el.classList.add("rv"); io.observe(el); });
+}
 
 /* ===== Mobile menu ===== */
 const burger = document.querySelector('.burger');

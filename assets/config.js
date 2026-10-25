@@ -14,10 +14,10 @@ window.KATZ_CONFIG = {
   // The server must answer HTTP 2xx with JSON {"accepted":true}. See README.md.
   leadEndpoint: "",
 
-  // "From" prices per service, in ILS incl. VAT. null = show "הצעת מחיר" instead of a number.
+  // "From" prices per service, in ILS incl. VAT. null = show "הצעת מחיר" instead of a number (policy Oct 2026: no prices on the site).
   // Confirm every number with management before enabling.
   prices: {
-    magar: 1190,   // ניקוי וחיטוי מאגר עד 10 מ"ק
+    magar: null,   // ניקוי וחיטוי מאגר
     digum: null,   // דיגום מי שתייה
     tzaneret: null, // חיטוי קווי צנרת
     mazach: null   // בדיקת מז"ח
