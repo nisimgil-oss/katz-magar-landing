@@ -1,9 +1,28 @@
 /* Public settings only. Never put API keys or secret webhook URLs in browser code.
- * Prices originate from the supplied design export; confirm before a public launch.
+ * Everything here is read by assets/site.js on every page.
+ * Phone numbers: taken from the company's existing site katz-water.com (Oct 2026). Confirm before launch.
  */
 window.KATZ_CONFIG = {
-  whatsappNumber: "972505219429",
-  leadEndpoint: "", // Optional public, same-origin lead API. Success JSON: {"accepted":true}.
-  showFromPrice: true,
-  fromPriceILS: 1190 // ILS, incl. VAT, cleaning + disinfection for a tank up to 10 m³.
+  // Office line shown on the site and used for tel: links (E.164 without "+").
+  phoneDisplay: "09-955-2072",
+  phoneE164: "97299552072",
+  // WhatsApp Business number (E.164 without "+").
+  whatsappNumber: "972584219429",
+  email: "office@katz-water.com",
+
+  // Optional lead API (same-origin or CORS-enabled). Empty = open WhatsApp with a prefilled message.
+  // The server must answer HTTP 2xx with JSON {"accepted":true}. See README.md.
+  leadEndpoint: "",
+
+  // "From" prices per service, in ILS incl. VAT. null = show "הצעת מחיר" instead of a number.
+  // Confirm every number with management before enabling.
+  prices: {
+    magar: 1190,   // ניקוי וחיטוי מאגר עד 10 מ"ק
+    digum: null,   // דיגום מי שתייה
+    tzaneret: null, // חיטוי קווי צנרת
+    mazach: null   // בדיקת מז"ח
+  },
+
+  // Google Tag Manager container id, e.g. "GTM-XXXXXXX". Empty = no tag loaded.
+  gtmId: ""
 };

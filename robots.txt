@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /index-v1-draft.html
+Disallow: /index-v2-draft.html
+
+Sitemap: https://nisimgil-oss.github.io/katz-magar-landing/sitemap.xml
