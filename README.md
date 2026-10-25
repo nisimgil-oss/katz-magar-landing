@@ -1,36 +1,49 @@
-# דף נחיתה – ניקוי וחיטוי מאגרים | הוראות השקה
+# כץ איכויות מים – האתר (סטטי)
 
-קובץ הדף: `index.html` (קובץ אחד, ללא תלויות מלבד Google Fonts). תצוגה מקדימה: https://claude.ai/code/artifact/b0d27978-3b7d-4663-861e-3974ba35f07c
+חי ב-GitHub Pages: https://nisimgil-oss.github.io/katz-magar-landing/ · עדכון: `git commit` + `git push` מתיקייה זו (ענף main).
+תוכנית עבודה וצ'ק-ליסט מלא: `../PLAN.md`. מחקרים: `../research/`.
 
-## מה חייבים למלא/לאשר לפני השקה
-| פריט | איפה בקובץ | סטטוס |
-|---|---|---|
-| טלפון 050-521-9429 (נלקח מדפי זהב, לאמת) | חיפוש `972505219429` ו-`050-521-9429` | לאמת |
-| מייל office@katz-water.com | פוטר + CTA סופי | לאמת |
-| מחיר התחלה 1,190 ₪ (כולל מע"מ, עד 10 מ"ק) | `assets/config.js` → `fromPriceILS`, וגם ברירת המחדל ב-HTML (`data-price="basic"`). `showFromPrice:false` מסתיר | לאשר |
-| תמונות: כרגע שתי המחשות AI מסומנות (reservoir.webp, sampling.webp) | להחליף בתמונות שטח אמיתיות ולעדכן את הכיתוב | להחליף |
-| הסמכה: מספר רישיון משרד הבריאות של המבצע | להוסיף בפס האמון ובפוטר | להוסיף |
-| מכרז 19/2010 של משרד הבריאות (דיגום למעבדות) | סעיף "מי כבר סומך עלינו" | לאמת שרוצים לפרסם |
-| שעות פעילות (א׳–ה׳ 7–19, ו׳ 7–15) | הודעת הצלחה בטופס | לאמת |
+## מבנה
+```
+index.html                דף הבית (בורר סוגי לקוח, 4 שירותים, רגולציה, אודות, טופס)
+nikui-magarim/index.html  ניקוי וחיטוי מאגרי מים (דף הנחיתה המאושר, עם תפריט ופוטר משותפים)
+digum-mei-shtiya/         דיגום מי שתייה
+hitui-tzaneret/           חיטוי קווי צנרת (טופס 4)
+mazach/                   בדיקת מז"ח
+privacy/  accessibility/  מדיניות פרטיות, הצהרת נגישות (noindex)
+404.html  sitemap.xml  robots.txt
+assets/styles.css         מערכת העיצוב המקורית
+assets/pages.css          תוספות לאתר הרב-דפי (תפריט, כרטיסים, פוטר, דפי שירות)
+assets/site.js            תפריט מובייל, בורר, טפסים, מעקב, ?seg=, מחירים מ-config
+assets/config.js          *** כאן משנים טלפון, וואטסאפ, מייל, מחירים, GTM, leadEndpoint ***
+```
+הנתיבים יחסיים (`../assets/`), כך שהאתר עובד גם בתת-נתיב (github.io/katz-magar-landing/) וגם בדומיין משלו.
+ביום המעבר לדומיין: חיפוש-החלפה של `https://nisimgil-oss.github.io/katz-magar-landing/` בכל קובצי ה-HTML וב-sitemap/robots, ועדכון הקישורים ב-404.html.
 
-## חיבור הטופס
-ההגדרות ב-`assets/config.js`: `whatsappNumber`, `leadEndpoint` (ריק = פתיחת וואטסאפ עם הודעה מוכנה), `showFromPrice`, `fromPriceILS`.
-שרת לידים חייב להחזיר JSON `{"accepted":true}` כדי שתוצג הודעת הצלחה. מפרט מלא: `../handoff-package/docs/INTEGRATION.md`.
+## config.js
+| מפתח | מה עושה |
+|---|---|
+| `phoneDisplay`, `phoneE164` | הטלפון המוצג וקישורי tel: בכל הדפים (`[data-phone]`, `a[href^=tel:]`) |
+| `whatsappNumber` | כל קישורי wa.me |
+| `email` | `[data-email]` |
+| `leadEndpoint` | ריק = הטופס פותח וואטסאפ עם הודעה מוכנה. כתובת = POST JSON; חייב להחזיר 2xx + `{"accepted":true}` |
+| `prices.{magar,digum,tzaneret,mazach}` | מספר = "החל מ-" מוצג; `null` = "הצעת מחיר" |
+| `gtmId` | GTM-XXXXXXX → נטען אוטומטית |
 
-## מעקב
-להוסיף לפני `</head>` את קוד GTM. הדף דוחף ל-`dataLayer`: `form_submit`, `click_call`, `click_whatsapp` (עם `seg`, `ctype`). ב-GTM: טריגרים על אירועים אלה → Google Ads Conversion + GA4 + Meta Pixel Lead.
+## אירועי dataLayer
+`click_call`, `click_whatsapp`, `lead_whatsapp_open`, `form_submit` (רק אחרי אישור שרת), `click_pricing_quote`, `click_case_quote`, `chooser_pick`. לכל אירוע: `service` (home/magar/digum/tzaneret/mazach), `seg`, `label`, `page_path`.
 
-## התאמת מסר לפי קמפיין (message match)
-פרמטר `?seg=` משנה כותרת, כותרת משנה וברירת מחדל בטופס:
-- `?seg=vaad` ועדי בתים · `?seg=nihul` חברות ניהול · `?seg=mosad` מוסדות · `?seg=hotel` מלונות · `?seg=tofes4` קבלנים
-UTM נשמרים אוטומטית בשדות נסתרים.
+## שדות הטופס (ל-leadEndpoint)
+`name, phone, ctype, city, details, service, service_label, seg, page, ts, utm_source, utm_medium, utm_campaign, utm_term, utm_content, gclid, website(honeypot)`.
 
-## דומיין ואחסון (המלצה)
-- **לא חובה לקנות דומיין.** לחברה יש katz-water.co.il (עד 4/2027) ו-katz-water.com (עד 2031). המלצה: תת-דומיין `magar.katz-water.co.il` – יורש אמון של הדומיין הוותיק (Quality Score טוב יותר בגוגל) ובלי עלות.
-- אם רוצים דומיין שיווקי נפרד לקמפיין: פנויים (נבדק 16.9.2026): nikui-magar.co.il, magar-naki.co.il, magarim.co.il, meagar.co.il, clean-tank.co.il. עלות ~60–80 ₪/שנה. חסרון: דומיין חדש בלי היסטוריה.
-- אחסון: Cloudflare Pages / Netlify / Vercel (חינם, מהיר, HTTPS אוטומטי). להעלות את `index.html` + לכוון CNAME של תת-הדומיין. או להעלות לאותו שרת וורדפרס כקובץ סטטי.
+## התאמת מסר לקמפיין
+`?seg=vaad|nihul|tofes4|mosad|hotel|prati` משנה כותרת, תת-כותרת ובחירת ברירת מחדל ב"אני פונה בשם". מוגדר ב-`window.KATZ_SEGS` בכל דף.
 
-## ביצועים ונגישות
-- קובץ יחיד ~75KB, ללא תמונות חיצוניות (LCP מהיר). כשמוסיפים תמונות אמיתיות: WebP, עד 200KB כל אחת, `loading="lazy"` מתחת לקיפול.
-- להוסיף תפריט נגישות (חובה בישראל לאתר עסקי) – למשל Nagishli או enable.co.il, ודף "הצהרת נגישות".
-- להוסיף קישור למדיניות פרטיות (חוק הגנת הפרטיות – תיקון 13, 2025).
+## בדיקה מקומית
+```
+node ../../scratch/serve.js "C:\gilgal\ניקוי מאגרים\site" 8765   # או כל שרת סטטי
+```
+צילום מובייל ב-Chrome headless: Chrome לא יורד מתחת ל~500px רוחב חלון; עוטפים ב-iframe ברוחב 390 (ראו היסטוריית הפרויקט).
+
+## מה חייבים לאמת לפני השקה
+טלפונים (נלקחו מ-katz-water.com), מספרי הסמכה, מחירים, שעות פעילות, ח.פ., שם רכז/ת נגישות, תמונות ועדויות אמיתיות. פירוט ב-`../PLAN.md` סעיף 3.
