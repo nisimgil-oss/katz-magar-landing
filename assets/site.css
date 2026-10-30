@@ -566,3 +566,40 @@ footer:not(.footer){padding:28px 0;font-size:14px;color:var(--muted)}
 
 .field label small{font-weight:400;color:var(--muted);font-size:12px}
 .field textarea{resize:vertical;min-height:84px}
+
+/* ---- Brand decor: drop motif, ripples, watermarks (all decorative, low contrast) ---- */
+:root{
+  --drop:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 26'%3E%3Cpath d='M12 1C8 7 3 11.5 3 16.5a9 9 0 0 0 18 0C21 11.5 16 7 12 1z'/%3E%3C/svg%3E");
+  --drops-light:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='84' viewBox='0 0 72 84'%3E%3Cpath d='M36 14c-4 6-9 10.5-9 15.5a9 9 0 0 0 18 0C45 24.5 40 20 36 14z' fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1.4'/%3E%3Cpath d='M0 56c-4 6-9 10.5-9 15.5a9 9 0 0 0 18 0C9 66.5 4 62 0 56zM72 56c-4 6-9 10.5-9 15.5a9 9 0 0 0 18 0C81 66.5 76 62 72 56z' fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1.4'/%3E%3C/svg%3E");
+  --drops-blue:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='84' viewBox='0 0 72 84'%3E%3Cpath d='M36 14c-4 6-9 10.5-9 15.5a9 9 0 0 0 18 0C45 24.5 40 20 36 14z' fill='none' stroke='%23194898' stroke-opacity='.07' stroke-width='1.4'/%3E%3Cpath d='M0 56c-4 6-9 10.5-9 15.5a9 9 0 0 0 18 0C9 66.5 4 62 0 56zM72 56c-4 6-9 10.5-9 15.5a9 9 0 0 0 18 0C81 66.5 76 62 72 56z' fill='none' stroke='%23194898' stroke-opacity='.07' stroke-width='1.4'/%3E%3C/svg%3E");
+}
+/* eyebrow bullet becomes a small drop */
+.eyebrow::before{width:9px;height:11px;border-radius:0;background:var(--turq);-webkit-mask:var(--drop) center/contain no-repeat;mask:var(--drop) center/contain no-repeat}
+/* ripples in the tinted sections (top-left corner, fading out) */
+.section-tint>.wrap,.section-blue>.wrap{position:relative;z-index:1}
+.section-tint::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-radial-gradient(circle at 6% 0%,rgba(25,72,152,.07) 0 1px,transparent 1px 44px);-webkit-mask-image:radial-gradient(circle at 6% 0%,#000 0,transparent 560px);mask-image:radial-gradient(circle at 6% 0%,#000 0,transparent 560px)}
+.section-blue:not(.final)::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-radial-gradient(circle at 96% 100%,rgba(25,72,152,.07) 0 1px,transparent 1px 44px);-webkit-mask-image:radial-gradient(circle at 96% 100%,#000 0,transparent 520px);mask-image:radial-gradient(circle at 96% 100%,#000 0,transparent 520px)}
+/* big brand mark, barely there */
+.brand-watermark{display:block;position:absolute;pointer-events:none;user-select:none;height:auto}
+.watermark-small{display:none}
+.watermark-contact{left:-70px;bottom:-60px;width:420px;opacity:.09;filter:brightness(0) invert(1);z-index:0}
+.final>.wrap{position:relative;z-index:1}
+.hero-svc .watermark-hero,.hero:not(.hero-home) .watermark-hero{left:-40px;top:12px;width:300px;opacity:.06;z-index:0}
+.hero-svc .wrap,.hero:not(.hero-home) .wrap{position:relative;z-index:1}
+/* home hero card: a drop in the corner */
+.hero-roof .hero-copy{position:relative;overflow:hidden}
+.hero-roof .hero-copy::after{content:"";position:absolute;left:-28px;bottom:-34px;width:150px;height:164px;background:var(--blue);opacity:.05;-webkit-mask:var(--drop) center/contain no-repeat;mask:var(--drop) center/contain no-repeat;pointer-events:none}
+/* service cards: a faint drop that wakes up on hover */
+.svc::after{content:"";position:absolute;left:-14px;top:-16px;width:84px;height:92px;background:var(--turq);opacity:.07;-webkit-mask:var(--drop) center/contain no-repeat;mask:var(--drop) center/contain no-repeat;pointer-events:none;transition:opacity .25s,transform .25s}
+.svc:hover::after{opacity:.16;transform:translateY(-3px)}
+.svc>*{position:relative}
+/* chooser card and lead cards: drop pattern on their tinted panels */
+.chooser-panel .why{position:relative}
+/* footer: drop pattern + wave edge */
+.footer{position:relative;overflow:hidden;background-image:var(--drops-light);background-color:var(--blue-deep)}
+.footer::before{content:"";position:absolute;inset:0 0 auto;height:120px;background:var(--waves) center top/1440px 240px no-repeat;opacity:.12;pointer-events:none}
+.footer>.wrap{position:relative;z-index:1}
+/* trust strip: drop pattern behind the cards, very light */
+.trust::before{content:"";position:absolute;inset:0;background:var(--drops-blue);opacity:.9;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);z-index:-1}
+@media(prefers-reduced-motion:reduce){.svc:hover::after{transform:none}}
+@media(max-width:820px){.watermark-contact{width:300px;left:-60px;bottom:-50px}.hero-svc .watermark-hero,.hero:not(.hero-home) .watermark-hero{width:200px;opacity:.05}}
