@@ -104,8 +104,8 @@ if (chooser) {
 /* ===== Lead forms ===== */
 function validIL(p){ p = (p || '').replace(/[^\d+]/g, ''); return /^(\+972|0)(5\d|[2-4]|[89]|7\d)\d{7}$/.test(p) || /^0\d{8,9}$/.test(p); }
 if (LEAD_ENDPOINT) {
-  document.querySelectorAll('form[data-lead] button[type="submit"]').forEach(b => b.textContent = 'שליחת בקשה להצעת מחיר');
-  document.querySelectorAll('form[data-lead] .fine').forEach(p => p.textContent = 'הפרטים ישמשו לחזרה אליכם בנוגע לפנייה בלבד.');
+  document.querySelectorAll('form[data-lead] button[type="submit"]').forEach(b => b.textContent = 'שליחת פנייה');
+  document.querySelectorAll('form[data-lead] .fine').forEach(p => p.textContent = 'הפנייה נשלחת למשרד ונחזור אליכם בהקדם. הפרטים ישמשו לחזרה אליכם בלבד.');
 }
 async function handleForm(form){
   const card = form.closest('.card') || form.parentElement;
@@ -138,7 +138,7 @@ async function handleForm(form){
     return;
   }
   const svc = data.service_label || PAGE_SERVICE_NAME || 'שירותי איכות מים';
-  const msg = `שלום, אני ${data.name}${data.ctype ? ' (' + data.ctype + ')' : ''}${data.city ? ', ' + data.city : ''}. מעוניין/ת בהצעת מחיר ל${svc}.${data.details ? ' פרטים: ' + data.details + '.' : ''} טלפון: ${data.phone}`;
+  const msg = `שלום, אני ${data.name}${data.ctype ? ' (' + data.ctype + ')' : ''}${data.city ? ', ' + data.city : ''}. מעוניין/ת בהצעת מחיר ל${svc}.${data.details ? ' פרטים: ' + data.details + '.' : ''} טלפון: ${data.phone}${data.email ? ', מייל: ' + data.email : ''}`;
   track('lead_whatsapp_open', {seg: seg || 'none', ctype: data.ctype || ''});
   btn.disabled = false; btn.textContent = original;
   window.location.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;

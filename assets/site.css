@@ -563,3 +563,6 @@ footer:not(.footer){padding:28px 0;font-size:14px;color:var(--muted)}
 @media(max-width:400px){.hero-svcs{grid-template-columns:1fr}}
 
 .hero-svcs a.wide{grid-column:1/-1}
+
+.field label small{font-weight:400;color:var(--muted);font-size:12px}
+.field textarea{resize:vertical;min-height:84px}
