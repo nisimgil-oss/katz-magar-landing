@@ -11,8 +11,8 @@
   --ink:#0F172A; --body:#334155; --muted:#64748B; --faint:#94A3B8;
   --sky:#F5FAFD; --sky-2:#E9F4FB; --sky-3:#D9ECF8;
   --line:#DCEAF4; --line-strong:#C4DBEB;
-  --head:'Heebo','Assistant','Segoe UI',Arial,sans-serif;
-  --text:'Assistant','Heebo','Segoe UI',Arial,sans-serif;
+  --head:'IBM Plex Sans Hebrew','Noto Sans Hebrew','Segoe UI',Arial,sans-serif;
+  --text:'Noto Sans Hebrew','IBM Plex Sans Hebrew','Segoe UI',Arial,sans-serif;
   --max:1200px; --r:16px; --r-sm:12px; --r-xs:8px;
   --shadow:0 8px 30px rgba(22,64,110,.08); --shadow-lg:0 24px 60px -24px rgba(22,64,110,.22);
   --waves:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 240' fill='none'%3E%3Cpath d='M0 118C200 42 339 195 565 115S1037 35 1440 108' stroke='%23B6E9F8' stroke-width='3'/%3E%3Cpath d='M0 145C220 72 385 225 614 144S1090 63 1440 132' stroke='%23D1F0FB' stroke-width='3'/%3E%3Cpath d='M0 169C180 97 395 241 635 167S1033 94 1440 165' stroke='%23E7F7FC' stroke-width='4'/%3E%3C/svg%3E");
