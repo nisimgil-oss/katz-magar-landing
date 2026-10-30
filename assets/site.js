@@ -9,6 +9,13 @@ const PHONE_DISPLAY = config.phoneDisplay || "09-955-2072";
 const PAGE_SERVICE = document.body.dataset.service || "";          // magar | digum | tzaneret | mazach | ""
 const PAGE_SERVICE_NAME = document.body.dataset.serviceName || ""; // Hebrew label for messages
 const qs = new URLSearchParams(location.search);
+/* First-touch attribution kept for the whole visit, so a form sent from another page still carries the campaign data */
+const ATTR_KEYS = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
+let attr = {};
+try { attr = JSON.parse(sessionStorage.getItem('katz_attr') || '{}') || {}; } catch(e) { attr = {}; }
+if (!attr.landing) { attr.landing = location.origin + location.pathname; attr.referrer = document.referrer || ''; }
+ATTR_KEYS.forEach(k => { const v = qs.get(k); if (v) attr[k] = v; });
+try { sessionStorage.setItem('katz_attr', JSON.stringify(attr)); } catch(e) {}
 
 /* ===== Google Tag Manager (loaded only when an id is configured) ===== */
 window.dataLayer = window.dataLayer || [];
@@ -112,7 +119,8 @@ async function handleForm(form){
   if (!validIL(data.phone)) { phoneEl.classList.add('err'); phoneEl.setAttribute('aria-invalid','true'); if (status) status.textContent = 'נא להזין מספר טלפון ישראלי תקין.'; phoneEl.focus(); return; }
   data.service = data.service || PAGE_SERVICE || 'general';
   data.seg = seg; data.page = location.origin + location.pathname; data.ts = new Date().toISOString();
-  ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'].forEach(k => data[k] = qs.get(k) || '');
+  ATTR_KEYS.forEach(k => data[k] = attr[k] || qs.get(k) || '');
+  data.landing = attr.landing || ''; data.referrer = attr.referrer || '';
   const btn = form.querySelector('button[type=submit]'); const original = btn.textContent; btn.disabled = true; btn.textContent = 'שולח...';
   let ok = false;
   if (LEAD_ENDPOINT) {

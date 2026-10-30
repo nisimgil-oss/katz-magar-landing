@@ -193,7 +193,7 @@ input,select,button,textarea{font-family:inherit}
 .chooser-panel .btn{width:100%}
 
 /* ---------- service cards ---------- */
-.services-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.services-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
 .svc{display:flex;flex-direction:column;gap:14px;padding:28px 24px 24px;background:#fff;border:1px solid var(--line);border-radius:var(--r);color:var(--ink);position:relative;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s,border-color .2s}
 .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#b9d4ea}
 .svc .ic{width:60px;height:60px;border-radius:14px;background:var(--sky-2);display:flex;align-items:center;justify-content:center;color:var(--blue);transition:background .2s,color .2s}
@@ -561,3 +561,5 @@ footer:not(.footer){padding:28px 0;font-size:14px;color:var(--muted)}
   .hero-roof .hero-copy{margin-top:-44px;padding:22px 18px 20px;border-radius:18px;background:#fff;box-shadow:var(--shadow)}
 }
 @media(max-width:400px){.hero-svcs{grid-template-columns:1fr}}
+
+.hero-svcs a.wide{grid-column:1/-1}

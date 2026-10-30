@@ -10,7 +10,8 @@ window.KATZ_CONFIG = {
   whatsappNumber: "972584219429",
   email: "office@katz-water.com",
 
-  // Optional lead API (same-origin or CORS-enabled). Empty = open WhatsApp with a prefilled message.
+  // Lead API: the Supabase Edge Function of katz-crm (see C:katz-crmdocsweb-leads). Empty = open WhatsApp with a prefilled message.
+  // When live: "https://vmtffwlkebrdsojgoids.supabase.co/functions/v1/web-lead"
   // The server must answer HTTP 2xx with JSON {"accepted":true}. See README.md.
   leadEndpoint: "",
 
